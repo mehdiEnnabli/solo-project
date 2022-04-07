@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>teacherDashboard</title>
+
+</head>
+
+<body>
+    <!-- header -->
+    <div class="container">
+        <header
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <a href="https://www.rbktunisia.com/"
+                class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                <img src="img\RBK.jpg" class="bi me-2" width="80" height="50" aria-label="RBK">
+                </img>
+            </a>
+            <!-- nav link show only when loged in -->
+            
+            <div id="welcome" class="col-md-3 text-end logedin">
+                        <button class="btn btn-outline-primary me-2" id="logout">logout</button>
+            </div>
+
+            <div id="nav" class="col-md-3 text-end">
+                <button class="btn btn-outline-primary me-2" data-bs-toggle="modal"
+                    data-bs-target="#loginModal">Login</button>
+            </div>
+        </header>
+    </div>
+
+    <!-- modal login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Please login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- login form -->
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">User Name</label>
+                            <input type="text" class="form-control" id="userName" aria-describedby="emailHelp">
+                            <div id="nameError" class="form-text error">this user name dosen't exist.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password">
+                            <div id="pwdError" class="form-text error">wrong password.</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="login" class="btn btn-primary">login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <h3 id="messageWelcome"></h3>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

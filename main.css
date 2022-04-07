@@ -1,0 +1,12 @@
+.error{
+    color:red;
+    display: none;
+}
+.logedin{
+    display: none;
+}
+#messageWelcome{
+    align-items: center;
+    align-content: center;
+    margin-left: 40%;
+}
