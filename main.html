@@ -30,9 +30,9 @@
                 </img>
             </a>
             <!-- nav link show only when loged in -->
-            
+
             <div id="welcome" class="col-md-3 text-end logedin">
-                        <button class="btn btn-outline-primary me-2" id="logout">logout</button>
+                <button class="btn btn-outline-primary me-2" id="logout">logout</button>
             </div>
 
             <div id="nav" class="col-md-3 text-end">
@@ -72,8 +72,165 @@
             </div>
         </div>
     </div>
-        <h3 id="messageWelcome"></h3>
+    <h3 id="messageWelcome"></h3>
 
+    <div class="container logedin">
+        <div class="row">
+            <div class="col">
+                <button id="delete" type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#deleteStudent">delete student</button>
+            </div>
+            <div class="col">
+                <button id="surch" type="button" class="btn btn-info" data-bs-toggle="modal"
+                    data-bs-target="#surchStudent">surch student</button>
+            </div>
+            <div class="col">
+                <button id="add" type="button" class="btn btn-success" data-bs-toggle="modal"
+                    data-bs-target="#addStudent">add student</button>
+            </div>
+
+        </div>
+        <br>
+        <!-- array of students -->
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">first name</th>
+                            <th scope="col">last name</th>
+                            <th scope="col">age</th>
+                            <th scope="col">email</th>
+                            <th scope="col">skills</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <!-- Modal add student -->
+        <div class="modal fade" id="addStudent" tabindex="-1" aria-labelledby="addStudentLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addStudentLabel">please add a student</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">FirstName</span>
+                            <input id="firstName" type="text" class="form-control" placeholder="firstName"
+                                aria-label="firstName" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">LastName</span>
+                            <input id="lastName" type="text" class="form-control" placeholder="lastName"
+                                aria-label="lastName" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">email</span>
+                            <input id="email" type="email" class="form-control" placeholder="email"
+                                aria-label="email" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="age">Age</label>
+                            <select class="form-select" id="age">
+                              <option value="18" selected>18</option>
+                              <option value="19">19</option>
+                              <option value="20">20</option>
+                              <option value="21">21</option>
+                              <option value="22">22</option>
+                              <option value="23">23</option>
+                              <option value="24">24</option>
+                              <option value="25">25</option>
+                              <option value="26">26</option>
+                              <option value="27">27</option>
+                              <option value="28">28</option>
+                              <option value="29">29</option>
+                              <option value="30">30</option>
+                              <option value="31">31</option>
+                              <option value="32">32</option>
+                            </select>
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <p class="error" id="addFormError"> please fill all the form</p>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success" id="validateAdd">add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal delete student -->
+        <div class="modal fade" id="deleteStudent" tabindex="-1" aria-labelledby="deleteStudentLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteStudentLabel">please chose a student to remove</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <select class="form-select" aria-label="toDelete" id="toDelete">
+                            
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger">delete</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal surch student -->
+        <div class="modal fade" id="surchStudent" tabindex="-1" aria-labelledby="surchStudentLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="surchStudentLabel">please chose a student to remove</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="search" class="form-control ds-input" id="search-input" placeholder="Fname or Lname"  style="position: relative; vertical-align: top;">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="html" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              HTML
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="css" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              CSS
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="js" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              JS
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="jquery" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              JQuery
+                            </label>
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-info" id="searchStudent">search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>
