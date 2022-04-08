@@ -87,7 +87,7 @@ $(document).ready(function () {
         <td colspan="2">${element.skills}</td>
         </tr>`)
     });
-
+    // search button
     $("#searchStudent").click(function (e) {
         var students = JSON.parse(localStorage.getItem("students"))   
         var newTable=""
@@ -105,12 +105,23 @@ $(document).ready(function () {
         
         
     })
-
+    // display students stored in the delet select
     var students = JSON.parse(localStorage.getItem("students"))   
     students.forEach((element,i) => {
         $("#toDelete").append(`<option value="${i}">${element.firstName} ${element.lastName}</option>`)
 
     });
+    // delete button
+    $("#deleteValidation").click(function (e) {
+        if (!JSON.parse(localStorage.getItem("students"))) {
+            $("#toDelete").replaceWith("<p class='error'>no student to delete</p>")
+        }
+        else
+        var temp = JSON.parse(localStorage.getItem("students"))
+            temp.splice($("#toDelete").val(),1)
+            localStorage.setItem("students", JSON.stringify(temp))
+            location.reload();
+    })
 
 
 
