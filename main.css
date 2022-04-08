@@ -10,3 +10,14 @@
     align-content: center;
     margin-left: 40%;
 }
+body{
+    background-color: rgb(250, 202, 209);
+}
+header{
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color:darkmagenta;
+}
+.functionality{
+    margin-left: 100px;
+}
